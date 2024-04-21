@@ -1,13 +1,12 @@
 import Navbar from "./components/Navbar"
-import TextArea from "./components/TextArea"
+import TextForm from "./components/TextForm"
 
 function App() {
 
   return (
     <>
     <Navbar appName="My React App"/>
-    <TextArea head="Enter your text below" placeholder='Enter your text and change it the way you want it'/>
-      <h1>Hello I am a heading</h1>
+    <TextForm head="Enter your text here!!" heading='Enter your text and change it the way you want it'/>
     </>
   )
 }
