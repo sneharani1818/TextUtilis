@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = (props) => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-info text-light mb-3">
+            <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} mb-3`}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">{props.appName}</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@ const Navbar = (props) => {
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href="#">Action</a></li>
                                     <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr className="dropdown-divider"/></li>
+                                    <li><hr className="dropdown-divider" /></li>
                                     <li><a className="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
                             </li>
@@ -32,13 +32,18 @@ const Navbar = (props) => {
                                 <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
                             </li>
                         </ul>
+                        <div className="form-check form-switch mx-2">
+                            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"  onClick={props.toggleMode}/>
+                            <label className={`form-check-label text-${props.mode==='light'?'dark':'light'}`} htmlFor="flexSwitchCheckChecked">Enable Dark Mode</label>
+                        </div>
                         <form className="d-flex" id='searchBar'>
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button className="btn btn-outline-dark light" type="submit">Search</button>
+                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button className={`btn btn-outline-dark light text-${props.mode==='light'?'dark':'light'}` }type="submit">Search</button>
                         </form>
                     </div>
                 </div>
             </nav>
+
         </div>
     )
 }
