@@ -8,18 +8,18 @@ function App() {
 
   const toggleMode=()=>{
     if(mode==='light'){
-      console.log(mode);
       setmode('dark');
+      document.body.style.backgroundColor="#37474F";
     }
     else{
-      console.log(mode);
       setmode('light');
+      document.body.style.backgroundColor="white";
     }
   }
   return (
     <>
     <Navbar appName="My React App" mode={mode} toggleMode={toggleMode}/>
-    <TextForm head="Enter your text here!!" heading='Enter your text and change it the way you want it'/>
+    <TextForm head="Enter your text here!!" heading='Enter your text and change it the way you want it' mode={mode}/>
     {/* <About/> */}
     </>
   )

@@ -34,7 +34,7 @@ const TextForm = (props) => {
     const [text, setText] = useState("")
 
   return (
-    <div className='container'>
+    <div className='container' style={{color:props.mode==='light'?'black':'white'}}>
         <h1>{props.heading}</h1>
         <textarea className="form-control" onChange={changeText} id="exampleFormControlTextarea1" rows="10" value={text} placeholder={props.head}></textarea>
         <button className='btn btn-outline-primary m-2' onClick={upperCaseText}>Convert to Upper Case</button>
