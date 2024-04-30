@@ -15,7 +15,7 @@ function App() {
     })
     setTimeout(() => {
       setalert(null);
-    }, 3000);
+    }, 1500);
   }
   const toggleMode=()=>{
     if(mode==='light'){
@@ -33,7 +33,7 @@ function App() {
     <>
     <Navbar appName="My React App" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
-    <TextForm head="Enter your text here!!" heading='Enter your text and change it the way you want it' mode={mode}/>
+    <TextForm head="Enter your text here!!" heading='Enter your text and change it the way you want it' mode={mode} showAlert={showAlert}/>
     {/* <About/> */}
     </>
   )

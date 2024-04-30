@@ -3,16 +3,22 @@ import React, {useState} from 'react'
 const TextForm = (props) => {
     const upperCaseText = () => {
         setText(text.toUpperCase());
+        // props.alert.type='dark';
+        // props.alert.msg='Converted to Upeer Case';
+        // props.toggleMode();
+        props.showAlert("Converted to Upper Case","success");
     }
 
     const lowerCaseText = () => {
         setText(text.toLowerCase());
+        props.showAlert("Converted to Lower Case","success");
     }
     const changeText = (event) => {
         setText(event.target.value);
     }
     const handleClearText=()=>{
         setText("");
+        props.showAlert("Text cleared","success");
     }
     const sentenceCaseText=()=>{
         let arr=text.split(" ");
@@ -21,6 +27,8 @@ const TextForm = (props) => {
             temptext+=element.charAt(0).toUpperCase()+element.substring(1).toLowerCase()+" "
         });
         setText(temptext);
+        props.showAlert("Converted to Sentence Case","success");
+
     }
     const alternateCaseText=()=>{
         let arr=text.split('');
@@ -29,6 +37,7 @@ const TextForm = (props) => {
             index%2==0?temptext+=element.toLowerCase():temptext+=element.toUpperCase()
         });
         setText(temptext);
+        props.showAlert("Converted to alternate text","success");
     }
 
     const [text, setText] = useState("")
